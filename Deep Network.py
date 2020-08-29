@@ -68,7 +68,7 @@ history = model.fit(x_train,y_train,validation_split=0.2, epochs=3, batch_size=6
 
 ypred=model.predict(x_test)
 for i in range(len(ypred)):
-    if ypred[i]>0.5:
+    if ypred[i]>=0.5:
         ypred[i]=1
     else:
             ypred[i]=0
@@ -80,9 +80,9 @@ if score>=acc:
 
 
 #%%
-print(config)
+
 #print("The configurations of your model should be: {:d} embedding dimensions, {:d} batch size".format(config[0],config[1]) )
-print('Accuracy of best model: ',acc)
+print('Accuracy of model: ',acc)
 # %%
 import matplotlib.pyplot as plt
 
